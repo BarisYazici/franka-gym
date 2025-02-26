@@ -2,6 +2,10 @@
 
 A Gymnasium environment for Franka robot control, providing a flexible interface for reinforcement learning tasks.
 
+This package is built on top of:
+- [libfranka-sim](https://github.com/BarisYazici/libfranka-sim) - A simulation backend for libfranka
+- [libfranka-python](https://github.com/BarisYazici/libfranka-python) - Python bindings for libfranka
+
 ## Features
 
 - Task-based architecture for custom reward functions and termination conditions
@@ -85,7 +89,16 @@ sequenceDiagram
 
 ## Installation
 
-1. First, install the Franka bindings package:
+### Prerequisites
+
+First, you'll need to install the required dependencies:
+
+1. [libfranka-sim](https://github.com/BarisYazici/libfranka-sim) - Simulation backend for libfranka
+2. [libfranka-python](https://github.com/BarisYazici/libfranka-python) - Python bindings for libfranka
+
+### Installation Steps
+
+1. First, install the Franka bindings package from [libfranka-python](https://github.com/BarisYazici/libfranka-python):
 ```bash
 cd python/franka_bindings
 pip install -e .
@@ -210,9 +223,12 @@ Optional methods you can override:
 - `get_info`: Provide additional information for debugging
 - `close`: Clean up any resources
 
-## Safety Features
 
-- Joint position limits enforced
-- Collision behavior settings
-- Velocity and acceleration limits
-- Timeout on motion commands 
+## Related Projects
+
+- [libfranka-sim](https://github.com/BarisYazici/libfranka-sim) - A simulation backend for libfranka
+- [libfranka-python](https://github.com/BarisYazici/libfranka-python) - Python bindings for libfranka 
+
+## License
+
+This project is licensed under the [Apache 2.0 license](LICENSE).
